@@ -29,4 +29,6 @@ jobs:
       - name: Deploy to GCP using SSH and using PM2
         run: |
           echo $USER
+          echo ${{ secrets.EC2_USER }}
+          echo ${{ secrets.EC2_HOST }}
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo $USER && ls -la"
