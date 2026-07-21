@@ -23,7 +23,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
           echo $USER
           ls -la
-          cd .ssh
+          cd ~/.ssh
           ls -la
 
       - name: Deploy to GCP using SSH and using PM2
