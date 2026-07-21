@@ -11,4 +11,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - run: ls -la
+
+          #This(-p) ensures even if .ssh is present it will not fail
+          #chmod 600 is essential because of pvt key only the main user must have complete access and 0 access to others its basically rwx(binary format)
+          # ssh-keyscan is used to add the EC2 instance to the known_hosts file it is necessary bcoz first time when connecting it will ask are you sure to connect where we have to type yes, but thats not possible with Github actions so directly preload the host to known hosts file -H hashs the host key for better privacy
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh    
+          echo "${{ secrets.EC2_SSH_PVT_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to GCP using SSH and using PM2
+        run: |
+          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "ls -la"
