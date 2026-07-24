@@ -76,7 +76,7 @@ export default function Home() {
           This is a simple Next.js app deployed to an GCP instance using GitHub
           Actions.
         </p>
-        <p> Adding a New Line to Check Commit Changes on the Cloud Deployment</p>
+        <p> Adding a New Line to Check Commit Changes on the Cloud Deployment Dev2</p>
         <button className={styles.button}>Deployment Successful 🚀</button>
       </div>
     </main>
