@@ -77,6 +77,7 @@ export default function Home() {
           Actions.
         </p>
         <p> Adding a New Line to Check Commit Changes on the Cloud Deployment Dev branch2</p>
+        <p> Adding another New Line to See Dev Branch Changes to Dev Domain</p>
         <button className={styles.button}>Deployment Successful 🚀</button>
       </div>
     </main>
