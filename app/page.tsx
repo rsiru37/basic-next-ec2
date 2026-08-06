@@ -70,13 +70,14 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.card}>
-        <p className={styles.badge}>Deployment Test</p>
+        <p className={styles.badge}>Deployment Testing</p>
         <h1 className={styles.title}>Next Project Deployed on GCP</h1>
         <p className={styles.description}>
           This is a simple Next.js app deployed to an GCP instance using GitHub
           Actions.
         </p>
         <p> Adding a New Line to Check Commit Changes on the Cloud Deployment Dev branch2</p>
+        <p> Adding another New Line to See Dev Branch Changes to Dev Domain</p>
         <button className={styles.button}>Deployment Successful 🚀</button>
       </div>
     </main>
